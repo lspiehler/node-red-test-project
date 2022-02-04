@@ -15,5 +15,57 @@
         "x": 350,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "33c300149d5c0caa",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "url": "/getnode",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "a00504ff31f79d48"
+            ]
+        ]
+    },
+    {
+        "id": "a00504ff31f79d48",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "msg.payload = os.hostname();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 480,
+        "y": 220,
+        "wires": [
+            [
+                "b714d0aea4776c88"
+            ]
+        ]
+    },
+    {
+        "id": "b714d0aea4776c88",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 220,
+        "wires": []
     }
 ]
