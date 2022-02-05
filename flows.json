@@ -38,7 +38,7 @@
         "type": "function",
         "z": "f6f2187d.f17ca8",
         "name": "",
-        "func": "msg.payload = os.hostname();\nreturn msg;",
+        "func": "let resp = {\n    clientip: msg.req.ip,\n    node: os.hostname(),\n    req_headers: msg.req.headers\n}\nmsg.headers = {};\nmsg.headers['Content-Type'] = 'application/json';\nmsg.payload = resp;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
